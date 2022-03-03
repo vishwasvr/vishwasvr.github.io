@@ -382,7 +382,7 @@ pre code{
 }
 .intro-header .site-heading,.intro-header .post-heading,.intro-header .page-heading{
     padding:85px 0 55px;
-    color:#00FA9A
+    color:#fff
 }
 @media only screen and (min-width:768px){
     .intro-header .site-heading,.intro-header .post-heading,.intro-header .page-heading{
@@ -391,6 +391,7 @@ pre code{
 }
 .intro-header .site-heading{
     padding:95px 0 70px
+    color:#00FA9A
 }
 @media only screen and (min-width:768px){
     .intro-header .site-heading{
