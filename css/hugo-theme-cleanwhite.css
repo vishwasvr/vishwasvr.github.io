@@ -400,7 +400,7 @@ pre code{
 .intro-header .site-heading,.intro-header .page-heading{
     text-align:center
 }
-.intro-header .site-heading h1,.intro-header .page-heading h2{
+.intro-header .site-heading h1,.intro-header .page-heading h1{
     margin-top:0;
     font-size:50px
 }
@@ -416,7 +416,7 @@ pre code{
     color: #FFD700
 }
 @media only screen and (min-width:768px){
-    .intro-header .site-heading h1,.intro-header .page-heading h2{
+    .intro-header .site-heading h1,.intro-header .page-heading h1{
         font-size:80px
     }
 }
