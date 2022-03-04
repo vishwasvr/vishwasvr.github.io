@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Vishwas Vankalapatia">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://vishwasvr.github.io/images/main_go_wideandtall_darklayer.jpeg">
+    <meta property="twitter:image" content="https://vishwasvr.github.io/images/main_go_wideandtall_darklayer.jpeg" />
+    
+
+    
+    <meta name="title" content="Create a Free Blog Site Using GitHub Pages and Hugo" />
+    <meta property="og:title" content="Create a Free Blog Site Using GitHub Pages and Hugo" />
+    <meta property="twitter:title" content="Create a Free Blog Site Using GitHub Pages and Hugo" />
+    
+
+    
+    <meta name="description" content="This article describes how to use GitHub Pages with Hugo to create, maintain, and host your own blog site.">
+    <meta property="og:description" content="This article describes how to use GitHub Pages with Hugo to create, maintain, and host your own blog site." />
+    <meta property="twitter:description" content="This article describes how to use GitHub Pages with Hugo to create, maintain, and host your own blog site." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Vishwas, Vankalapati, Data, Engineer, Visualization, Analytics, BI, Cloud, AWS, Tableau, Cognos, Power BI, Python, Spark, Glue, RDS, SQL">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Create a Free Blog Site Using GitHub Pages and Hugo-Vishwas Vankalapati Blog</title>
+
+    <link rel="canonical" href="/post/blogsite_example/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vishwas Vankalapatia</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/blog">blog</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/prgramming/">Programming</a></li>
+                    
+                        <li><a href="/top/modelling/">Modelling</a></li>
+                    
+                        <li><a href="/top/storage/">Storage</a></li>
+                    
+                        <li><a href="/top/analytics/">Analytics</a></li>
+                    
+                        <li><a href="/top/visualization/">Visualization</a></li>
+                    
+                        <li><a href="/top/learn/">Learn</a></li>
+                    
+                        <li><a href="/top/books/">Books</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/github-pagesLightBlue.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/blog" title="blog">
+                            blog
+                        </a>
+                        
+                        <a class="tag" href="/tags/github-pages" title="GitHub Pages">
+                            GitHub Pages
+                        </a>
+                        
+                        <a class="tag" href="/tags/hugo" title="Hugo">
+                            Hugo
+                        </a>
+                        
+                    </div>
+                    <h1>Create a Free Blog Site Using GitHub Pages and Hugo</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    Vishwas Vankalapatia
+                             
+                            on 
+                            Monday, August 31, 2020
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>Want to create your own blog, but don&rsquo;t want to get tied into any of the big hosted solutions or subscription publishing sites? This article describes how to use GitHub Pages with Hugo to create, maintain, and host your own blog site.</p>
+<h2 id="overview">Overview</h2>
+<blockquote>
+<p>Prerequisites:</p>
+<ol>
+<li>A basic knowledge of git and GitHub.</li>
+<li>Git version 2.24.3 or higher</li>
+<li>Mac development machine
+<ol>
+<li>Windows and Linux are also supported. Much of what&rsquo;s described here is applicable to both of these. But the exact steps I followed were performed on a Mac.</li>
+</ol>
+</li>
+<li>For significant customizations beyond what&rsquo;s available natively in Hugo and the chosen Hugo theme, a basic understanding of HTML and CSS will be required. More information on customizations can be found in the <a href="./#appendix">Appendix</a> below</li>
+</ol>
+</blockquote>
+<p>This article is a fairly detailed tutorial on how to create a full featured website/blog using Hugo and GitHub Pages. If you just want a quick overview of how to use Hugo I recommend going to the <a href="https://gohugo.io/getting-started/quick-start/">Hugo Quickstart page</a>. If you want a quickstart on setting up a Hugo/GitHub Pages site I recommend going to the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Hugo GitHub Pages quickstart page</a>.</p>
+<p>At its core GitHub Pages is a combination of a GitHub repository and a published web site. One consequence of this is that any commit to the master branch of the repository is immediately published. One way to create a GitHub Pages website is to also create an associated &ldquo;development&rdquo; GitHub repository. This is what is described here.</p>
+<p>Hugo is an Open Source static website generator. It is quite powerful and the websites that can be created with Hugo can be quite sophisticated. Hugo is the base engine used to interpret how to create a website based on a predefined template. Hugo calls these templates themes. &ldquo;Skin&rdquo; is another word for theme. A theme is a combination of HTML and CSS. The HTML is used for site layout. CSS is used to define colors, fonts, font size, and other non-layout related attributes that define how the website looks. This combination is quite powerful. The website&rsquo;s page definitions themselves, i.e., the website&rsquo;s content, are defined using standard Markdown syntax.</p>
+<p>Hugo also comes with an HTML server that can be used during development to provide immediate feedback on any changes that are made to web pages. Hugo can be used in 2 ways:</p>
+<ol>
+<li>Development mode - In this mode Hugo is using its HTML server to render pages as they are being modified during development. Running the server during development provides immediate feedback when changes are made to the content.</li>
+<li>Build mode - Hugo will also generate a complete static website based on a theme&rsquo;s layout, CSS, and the markdown files that define the content. The output of this mode is what will be published.</li>
+</ol>
+<p>The Hugo themes as well as the website&rsquo;s page definitions are stored in what I above called the &ldquo;development&rdquo; repository. This is the primary authoring space. The Hugo web server operates against this repository. Through the magic of Git Submodules, the final set of committed changes to the master branch in the development repository are immediately made available in the GitHub Pages repository.</p>
+<blockquote>
+<p>Brief segue on <a href="https://github.blog/2016-02-01-working-with-submodules/">Git Submodules</a>:</p>
+<p>Git Submodules are a way of including one, <strong>hosted</strong>, GitHub repository in another, <strong>hosting</strong>, repository. The entire content of the hosted repository is available in the hosting repository as if it was just a normal subdirectory in the hosting repository. Changes to the hosted repository can be made in the context of the hosting repository. Committing any such changes are immediately available in the hosted repository.</p>
+</blockquote>
+<p>In the context of Submodules, the GitHub Pages repository is the <strong>hosted</strong> repository. It contains the published content of the website. In contrast, the repository containing the Hugo theme(s) and the development versions of the content is the <strong>hosting</strong> repository. When the website content is ready for publishing Hugo is used to generate the static website. Hugo generates the content into the submodule associated with the, <strong>hosted</strong>, GitHub Pages repository. When ready, the changes are committed in the <strong>hosting</strong> repository and they become immediately available, and thereby published, in the GitHub Pages repository.</p>
+<h2 id="initial-github-setup">Initial GitHub setup</h2>
+<p>The two repositories, the GitHub Pages repository and the hosting development repository, need to be created. There are 2 options for the GitHub Pages repository:</p>
+<ol>
+<li>Personal or Organizational</li>
+<li>Project</li>
+</ol>
+<p>See the <a href="https://help.github.com/articles/user-organization-and-project-pages/#user--organization-pages">GitHub Pages help documentation</a> for more details about the differences. This article describes how to create a Personal GitHub Pages repository.</p>
+<p>Creating the GitHub Pages repository is fairly straightforward, but there is one very important restriction on its name. The repository&rsquo;s name must be of the form <code>&lt;github_username&gt;.github.io</code>. For example, <code>smith.github.io</code> where <code>smith</code> is the associated user&rsquo;s account name. This will be the URL of the website. So the GitHub pages repository is just a normal GitHub repository, just with a very specific name. We&rsquo;ll use this repository name, <code>smith.github.io</code> in the rest of the article when referring to the GitHub Pages repository. See the <a href="https://pages.github.com/">GitHub Pages quickstart guide</a> if you need more details on how to create a repository.</p>
+<p>The second step is to create the repository where the website development/authoring will take place. This is just a normal GitHub repository. For the purposes of this article, we&rsquo;ll use <code>myblog.dev.repo</code> for the name of the development repository. See the <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository">GitHub documentation</a> if you need more details about how to create a repository.</p>
+<h2 id="install-hugo">Install Hugo</h2>
+<p>There are a number of ways to install Hugo:</p>
+<ul>
+<li>There are binary releases available on the <a href="https://github.com/gohugoio/hugo/releases">Hugo downloads page</a>.</li>
+<li>On a Mac using Homebrew is the simplest, <code>brew install hugo</code>.</li>
+<li>On Linux, with Homebrew installed, <code>brew install hugo</code>.</li>
+<li>There are a couple of ways to install on Windows using Chocolatey:
+<ul>
+<li>choco install hugo[-extended] -confirm</li>
+<li>scoop install hugo[-extended]</li>
+</ul>
+</li>
+</ul>
+<p>Docker images are also available. For more details on installing Hugo see the <a href="https://gohugo.io/getting-started/installing/">Hugo documentation</a>.</p>
+<h2 id="create-a-basic-site">Create a basic site</h2>
+<h3 id="initialize-the-new-site">Initialize the new site</h3>
+<p>The first thing to do is to clone the development/authoring repository on to your local machine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git@github.com:smith/myblog.dev.repo.git
+</span></span></code></pre></div><p>With the GitHub repositories setup and Hugo installed it&rsquo;s time to initialize the website. Hugo provides this capability through the <code>hugo</code> command line:</p>
+<ol>
+<li>Change directories into the root of the <code>myblog.dev.repo</code> repository</li>
+<li>Run <code>hugo new site .</code>
+<ol>
+<li><code>hugo new site</code> is telling Hugo to create a new site. The final parameter in the command, the <code>.</code>, is telling Hugo which directory to create the new site. In this case we&rsquo;re going to create it in our development/authoring repository, <code>myblog.dev.repo</code>.</li>
+</ol>
+</li>
+</ol>
+<p><code>hugo new site &lt;dirname&gt;</code> creates the following directory structure:</p>
+<pre tabindex="0"><code>site_root
+  |--layout
+  |--content
+  |--static
+  |--data
+  |--themes
+  |--config.toml
+  +--archetypes
+</code></pre><p>The directories and files that we&rsquo;re interested in for this article are:</p>
+<ul>
+<li><code>content</code> - this is where content under development is located, i.e., the various markdown files for a site&rsquo;s pages.</li>
+<li><code>static</code> - content that doesn&rsquo;t change, such as images</li>
+<li><code>themes</code> - Where the site&rsquo;s theme(s) are located</li>
+<li><code>config.toml</code> - The basic configuration for the site, e.g., the site&rsquo;s name</li>
+<li><code>archetypes</code> - Template(s) used by the <code>hugo new &lt;contentdir/contentfile.md&gt;</code> command to create new content markdown files</li>
+</ul>
+<h3 id="pick-and-install-the-sites-theme">Pick and install the site&rsquo;s theme</h3>
+<p>The next step is to choose a theme to use. See the <a href="https://themes.gohugo.io/">Hugo themes page</a> and select the one that looks best to you. The Hugo <a href="https://themes.gohugo.io/gohugo-theme-ananke/">Ananke theme</a> is a popular one. I chose the <a href="https://themes.gohugo.io/hugo-theme-cleanwhite/">Clean White theme</a>. Once you&rsquo;ve picked a theme you need to add it to the development/authoring repo. Like with the GitHub Pages repo, this is accomplished via a git submodule:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule add &lt;theme-github-url&gt; &lt;target-directory&gt;
+</span></span></code></pre></div><p>I chose a customized version of the Clean White theme:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule add git@github.com:youngkin/hugo-theme-cleanwhite-rsy.git themes/hugo-theme-cleanwhite-rsy
+</span></span></code></pre></div><p>The <code>&lt;target-directory&gt;</code> should be a subdirectory of <code>themes</code>. <code>themes</code> is where Hugo expects loaded themes to be located.</p>
+<blockquote>
+<p>I&rsquo;ll discuss my reasons for customizing the Clean White theme, as well as describe what I did, later in this article.</p>
+</blockquote>
+<p>Some basic customization of a Hugo generated website is specified in the <code>config.toml</code> file. For now we&rsquo;ll just tell Hugo to use our chosen theme.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;theme = &#34;&lt;theme-name&gt;&#34;&#39;</span> &gt;&gt; config.toml
+</span></span></code></pre></div><p>In my case I used</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;theme = &#34;hugo-theme-cleanwhite-rsy&#34;&#39;</span> &gt;&gt; config.toml
+</span></span></code></pre></div><p>The theme name is the name of the directory where you placed the theme.</p>
+<h3 id="test-the-new-site-locally">Test the new site locally</h3>
+<p>Now it&rsquo;s time to create some content and test everything we&rsquo;ve done so far. The first step is to create some content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new post/testpage.md
+</span></span></code></pre></div><p>The new page will be located at <code>content/post/testpage.md</code>, <code>post</code> being the parent directory given in the previous command. This command places all content in the <code>content</code> directory. <code>content</code> is one of the directories Hugo uses as the source of content when generating the static web site. The file will look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;Testpage&#34;
+</span></span><span style="display:flex;"><span>date: 2020-08-27T13:43:09-06:00
+</span></span><span style="display:flex;"><span>draft: true
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>You can inspect the generated file. The generated content comes from the <code>archetypes/default.md</code> file which is the template used for all new content. The content between the <code>---</code> lines is &ldquo;front matter&rdquo; for the page. Text after the 2nd <code>---</code> line is the body of the web page.</p>
+<blockquote>
+<p>&ldquo;Front matter&rdquo; is the Hugo term for the information at the top of the page used to create a page&rsquo;s rendered title as well as some other metadata that is placed in the associated HTML file&rsquo;s <code>&lt;meta&gt;</code> tags in the page&rsquo;s <code>head</code> section. Don&rsquo;t worry too much if you don&rsquo;t understand all this.</p>
+</blockquote>
+<p>The next step is to test the installation by starting the Hugo web server and navigating to the development site:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server -D
+</span></span></code></pre></div><p>Near the bottom of the logged output you&rsquo;ll see a line like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Web Server is available at http://localhost:1313/ <span style="color:#f92672">(</span>bind address 127.0.0.1<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Copy the URL into a browser and you should see the home page of the new site. Depending on the theme chosen, you should see something like this:</p>
+<p><img style="border:2px solid black" src="/images/My_New_Hugo_Site.png" align="left"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<h2 id="authoring-a-site">Authoring a site</h2>
+<p>Now we&rsquo;re ready to start creating the actual site that we want to publish. The first thing you might want to do is delete the <code>content/post/testpage.md</code> file created previously. This was created just to test the installation and is no longer needed.</p>
+<h3 id="configuration">Configuration</h3>
+<p>As mentioned above, the basic configuration for a Hugo website is specified in the <code>config.toml</code> file. Hugo&rsquo;s <a href="https://gohugo.io/getting-started/configuration/">Getting Started documentation</a> covers configuration in detail. The configuration for this blog is a basic, but functional, configuration. It looks like this (<i style="color:#1E90FF;">remember, <code>smith</code> is our fictional GitHub account name, you&rsquo;ll need to replace it with your own account name</i>):</p>
+<pre tabindex="0"><code>baseurl = &#34;https://smith.github.io&#34;
+title = &#34;Rich Youngkin&#34;
+theme = &#34;hugo-theme-cleanwhite-rsy&#34;
+languageCode = &#34;en-us&#34;
+paginate = 5000 #frontpage pagination
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  header_image = &#34;images/main_go_wideandtall_darklayer.jpeg&#34;
+  title = &#34;Software Engineering&#34;
+  slogan = &#34;$ grep -rni \&#34;The how&#39;s and why&#39;s\&#34; .&#34;
+  SEOTitle = &#34;Rich Youngkin Blog&#34;
+  keyword = &#34;Rich, Youngkin, Raspberry, Pi, Docker, Kubernetes, Go, Golang, Microservice&#34;
+
+  # Sidebar settings
+  sidebar_about_description = &#34;Father, Husband, Skier, Cyclist, and, oh yeah, Software Developer&#34;
+  sidebar_avatar = &#34;images/MeAtJackson.jpeg&#34;
+  about_me = true
+
+  featured_tags = true
+  featured_condition_size = 2 # How many posts have to have a given tag to be featured (greater-than)
+
+  image_404 = &#34;images/404-bg.jpg&#34;
+  title_404 = &#34;We couldn&#39;t find what you were looking for...&#34;
+
+  omit_categories = false
+
+  [[params.addtional_menus]]
+  title =  &#34;ABOUT&#34;
+  href =  &#34;/top/about/&#34;
+
+  [params.social]
+  rss            = true
+  email          = &#34;rich.youngkin@gmail.com&#34;
+  linkedin       = &#34;https://www.linkedin.com/in/richard-youngkin-0749763&#34;
+  github         = &#34;https://github.com/youngkin&#34;
+  medium         = &#34;https://medium.com/@RichYoungkin&#34;
+  stackoverflow  = &#34;https://stackoverflow.com/users/2646870/rich&#34;
+  reddit         = &#34;https://www.reddit.com/user/elevation5280&#34;
+</code></pre><p>Taken line-by-line, here&rsquo;s what each one means:</p>
+<ul>
+<li><code>baseurl</code> - This is the URL of the published web site. For a GitHub Pages site it must be of the form <code>https://&lt;your-github-id-here&gt;.github.io</code>, e.g., <code>https://smith.github.io</code>.</li>
+<li><code>title</code> - This is the text displayed in the top left, header, area of every page on the site. It is a button control that will take you to the home page. Typically it&rsquo;s your name.</li>
+<li><code>theme</code> - The theme used by the site</li>
+<li><code>language</code> - The <a href="https://en.wikipedia.org/wiki/IETF_language_tag">IETF language tag</a> specifying the primary language of the website. The language code, e.g., <code>en</code>, can have a suffix specifying an optional country code or region to subdivide the language into various dialects. <code>en-us</code> means United States English. <code>en-gb</code> means Great Britian English.</li>
+<li><code>paginate</code> - how many blog entry summaries to display on the home page</li>
+<li><code>[markup]</code> - this is a section that specifies the Markup/down syntax used. It&rsquo;s optional. The Goldmark renderer is used by default. Blackfriday was the previous renderer and can still be used if specified. Goldmark has more capability than Blackfriday, but by default it won&rsquo;t render HTML tags due to security concerns. I wanted to use HTML tags in my pages, primarily for image scaling and placement, as well as customizing text rendering. I had originally swapped out Goldmark for Blackfriday but later decided that I might like the extra functionality provided by Goldmark. To get the HTML tag support I needed, I had to add this <code>[markup]</code> section and set <code>unsafe = true</code>. See the <a href="https://gohugo.io/getting-started/configuration-markup">Hugo Configure Markup document</a> for more details.</li>
+<li><code>[params]</code> - These are the basic parameter settings available
+<ul>
+<li><code>header_image</code> - the background image to use as the default in the headers of all pages. It is the only image that will be used for the home and about pages</li>
+<li><code>title</code> - This is the text used in the title, or banner, displayed at the top of every web page.</li>
+<li><code>slogan</code> - This is a subtitle displayed just below the title in the header of all web pages</li>
+<li><code>SEOTitle</code> &amp; <code>keyword</code> - These have something to do with search engine optimization. I included them in the hope that this would make my site more visible. More <a href="https://moonbooth.com/hugo/seo/">information can be found in this tutorial</a>.</li>
+<li><code>sidebar_about_description</code>, <code>sidebar_avatar</code>, &amp; <code>about_me</code> - The sidebar contains a concise &ldquo;about me&rdquo; biography. You can use the description to provide a short bio and the avatar to provide an image. <code>about_me</code> controls whether the sidebar is shown.</li>
+<li><code>featured_tags</code> &amp; <code>featured_condition_size</code> - These are used to specify whether you want to display tags used to describe pages to show up in a tag cloud on each page. <code>feature_condition_size</code> specifies the minimum number of articles that must have a given tag before that tag shows up in the tag cloud. It is important to note that tags will only be displayed when <code>feature_condition_size + 1</code> articles with a given tag exist.</li>
+<li><code>image_404</code> &amp; <code>title_404</code> - These specify how a 404 Not Found page looks. One is the image, the other is the textual title.</li>
+<li><code>omit_categories</code> - Categories are like a higher level tag. For example, New Mexico, Colorado, Utah, Wyoming, Idaho, and Montana might all be tags for articles pertaining to those U.S. states. There might be a category &ldquo;Best Ski Areas in the World&rdquo; that could be used to group those tags into a higher level grouping. Defined Categories can be included in the navigation bar at the top of each page. <code>omit_categories</code> controls whether categories will be displayed in the top navigation bar.</li>
+<li><code>[[params.additional_menus]]</code> - This allows the specification of additional menu items to be put in the top navigation bar, for example an &ldquo;About&rdquo; page.</li>
+<li><code>[params.social]</code> - This entire sub-section is used to put badges associated with different social media sites on the Hugo generated site. There are other social media sites available such as twitter and facebook.</li>
+</ul>
+</li>
+</ul>
+<h3 id="archetypes">Archetypes</h3>
+<p>Archetypes are templates used by Hugo when new web pages are created via the  <code>hugo new &lt;some-post-file&gt;</code> command. They are useful because there is a &ldquo;front matter&rdquo; section at the top of each page describing some basic characteristics like the page title, description, and date. Without archetypes this &ldquo;front matter&rdquo; would have to be manually typed or copied on each new web page. While Hugo installs a default archetype at <code>archetypes/default.md</code>, you&rsquo;ll probably want to create your own. I have a file located at <code>archetypes/post.md</code>. The name <code>post.md</code> is meaningful to Hugo. It is the archetype Hugo will use, if present, when generating posts. There are other archetype file names and locations that are meaningful to Hugo. You can find more detail about archetypes at the <a href="https://gohugo.io/content-management/archetypes/">Hugo Archetypes</a> page.</p>
+<p>My <code>archetypes/post.md</code> file looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
+</span></span><span style="display:flex;"><span>#description: &lt;descriptive text here&gt;
+</span></span><span style="display:flex;"><span>date: {{ .Date }}
+</span></span><span style="display:flex;"><span>draft: true
+</span></span><span style="display:flex;"><span>toc: false
+</span></span><span style="display:flex;"><span>image: &#34;&#34;
+</span></span><span style="display:flex;"><span>tags: []
+</span></span><span style="display:flex;"><span>categories: []
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Descriptive text here...
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--more--&gt;</span>
+</span></span></code></pre></div><p>Here&rsquo;s what each line means:</p>
+<ul>
+<li><code>---</code> - these lines delineate the &ldquo;front matter&rdquo; section of the page</li>
+<li><code>title: &quot;{{ replace .Name &quot;-&quot; &quot; &quot; | title }}&quot;</code> - specifies that the page&rsquo;s title will be generated from the file name after replacing dashes (&rsquo;-&rsquo;) with spaces. This is a quick, handy, way to generate titles automatically. For example, <code>My-New-Post.md</code> becomes &ldquo;My New Post&rdquo; in the page&rsquo;s title.</li>
+<li><code>description</code> - specifies text to be used in an article&rsquo;s summary on the home page. This text will not be displayed in the article. It is related to the <code># Descriptive text here...</code> line a little lower in the file.</li>
+<li><code>date</code> - replaced with the date the post was created. The generated date can be changed if you want to modify it, for example after updating the page. There are more sophisticated things you can do with dates, such as published date, last modified date, expiration date, etc. Those all have special meanings. See the <a href="https://gohugo.io/getting-started/configuration/#configure-dates">Hugo documentation</a> for more details.</li>
+<li><code>draft</code> - specifies whether a page is in draft or publish state. Pages in draft state can be seen when viewing the site running on the Hugo web server, but they will not be visible from a published web site such as GitHub Pages.</li>
+<li><code>toc</code> - If <code>true</code>, this will create a table of contents at the top of the article. This is a customization. See the appendix, comments section, below for details.</li>
+<li><code>image</code> - specifies the image to display at the top of the page. If not specified, the <code>header_image</code> in <code>config.toml</code> will be used.</li>
+<li><code>tags</code> - specifies a comma separated list of low level subject groupings. Taking my example from above, U.S. states might be an appropriate subject grouping for pages pertaining to U.S. states. For example, <code>tags: [&quot;Colorado&quot;, &quot;Utah&quot;, ...]</code>.</li>
+<li><code>categories</code> - specifies a specifies a comma separated list of high level subject groupings. Again, taking my example from above, some U.S. states can be put in the category of &ldquo;Best Ski Areas in the World&rdquo;.</li>
+<li><code># Descriptive text here...</code> &amp; <code>&lt;!--more--&gt;</code> - These lines are used as an alternative to the <code>description</code> line in the &ldquo;front matter&rdquo; section. This can be used if the amount of descriptive text desired is more than can be comfortably put in the <code>description</code> line. <code>&lt;!--more..&gt;</code> is used to indicate the end of this type of descriptive text. Unlike <code>description</code> above, this text does appear in the article. An alternative to both the <code>description</code> line and these lines is to not specify either. In this case the first 70 words of the article will be used in the article summary.</li>
+</ul>
+<h3 id="writing">Writing</h3>
+<p>Now that we have our repositories setup, Hugo installed, our initialized Hugo development repository, and a basic understanding of Hugo website and page configuration, we can start authoring content. All content is written using Markup syntax. See the <a href="https://www.markdownguide.org/tools/hugo/">Hugo Markdown Guide</a> for more information and syntax details. As noted in the Configuration section above, using the Goldmark <code>unsafe</code> option allows you to use standard HTML tags in the content if desired.</p>
+<h2 id="publishing-content-to-github-pages">Publishing content to GitHub Pages</h2>
+<p>At some point you&rsquo;re going to be ready to make your site live. To do this you&rsquo;ll want to generate the static content to be published from the development content. This development content is generally found in the <code>content</code> and <code>static</code> directories that were created when the site was initialized. The output of the generation process is generally placed in the <code>public</code> directory, but this can be modified. For our purposes we&rsquo;re just going to let Hugo take this default behavior.</p>
+<h3 id="linking-the-development-repository-to-the-github-pages-repository">Linking the development repository to the GitHub Pages repository</h3>
+<p><strong>This step only needs to be done once.</strong></p>
+<p>Before you can publish to your GitHub Pages site, you need to link your development repository, <code>myblog.dev.repo</code> in our case, to your GitHub Pages repository. We&rsquo;re using <code>smith.github.io</code> as the GitHub Pages repository name. To do the linking we&rsquo;ll use Git Submodules as discussed previously. The command to use is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule add -b master git@smith.github.io.git public
+</span></span></code></pre></div><p>The important parts of the command are:</p>
+<ul>
+<li><code>-b master</code> - This links to the hosted repository&rsquo;s <code>master</code> branch</li>
+<li><code>public</code> - This links the hosting, i.e., this repository&rsquo;s <code>public</code> directory, with the hosted repository. So any changes in the <code>public</code> directory, when committed, will be pushed to the GitHub Pages repository, <code>smith.github.io.git</code>.</li>
+</ul>
+<p>To illustrate the linking of the development repository to the GitHub Pages repository do the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote -v
+</span></span></code></pre></div><p>The output should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>origin	https://github.com/smith/smith.github.io.git <span style="color:#f92672">(</span>fetch<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>origin	https://github.com/smith/smith.github.io.git <span style="color:#f92672">(</span>push<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="publishing-the-site">Publishing the site</h3>
+<p>When you&rsquo;re ready to publish the site you&rsquo;ll need to generate the static content. This is done by running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./deploy.sh
+</span></span></code></pre></div><p>This file is a slightly modified version of the <code>deploy.sh</code> file described on the Hugo <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Hosting on GitHub</a> tutorial. The <code>deploy.sh</code> script looks like this:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+# If a command fails then the deploy stops
+set -e
+
+printf &#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34;
+
+# Create commit message
+msg=&#34;rebuilding site $(date)&#34;
+if [ -n &#34;$*&#34; ]; then
+	msg=&#34;$*&#34;
+fi
+
+# Build the project.
+echo &#34;&#34;
+echo &#34;&#34;
+echo &#34;Committing changes to $(pwd)&#34;
+hugo -D
+
+# Go To Public folder
+cd public
+
+# Add &#39;public&#39; (Github Pages repo) changes to git and commit/push.
+echo &#34;&#34;
+echo &#34;&#34;
+echo &#34;Committing changes to $(pwd)&#34;
+git add .
+git commit -m &#34;$msg&#34;
+git push origin master
+
+# Add this repos changes to git and commit/push. First &#39;cd&#39; out of public
+cd ..
+echo &#34;&#34;
+echo &#34;&#34;
+echo &#34;Committing changes to $(pwd)&#34;
+git add .
+git commit -m &#34;$msg&#34;
+git push origin master
+</code></pre><p><code>deploy.sh</code> does several things:</p>
+<ol>
+<li>It builds the static content via <code>hugo -D</code></li>
+<li>It stages everything in the <code>project-root/public</code> directory for commit via <code>git add .</code></li>
+<li>It commits everything in the <code>project-root/public</code> directory via <code>git commit -m &quot;&lt;commit message&gt;</code> (the &ldquo;commit message&rdquo; is generated by the script)</li>
+<li>It pushes the changes to master via <code>git push origin master</code></li>
+<li>It stages everything in the <code>project-root</code> directory for commit via <code>git add .</code></li>
+<li>It commits everything in the <code>project-root</code> directory via <code>git commit -m &quot;&lt;commit message&gt;</code></li>
+<li>It pushes the changes to master via <code>git push origin master</code></li>
+</ol>
+<blockquote>
+<p><strong style="color:#ff0000;">CAUTION!!!!!</strong> Everything in <code>public</code> and the <code>project root</code> directories is staged for commit. This means that all additions or changes you made will be committed. This can be an issue if you have new temporary files that you have no intention of committing. If you don&rsquo;t want this behavior you can modify the script to comment out the <code>git add .</code> commands.</p>
+</blockquote>
+<h2 id="the-finished-product">The finished product</h2>
+<p>This web site! The source code is available on GitHub for:</p>
+<ul>
+<li><a href="https://github.com/youngkin/hugoblog">The blog source code</a></li>
+<li><a href="https://github.com/youngkin/hugo-theme-cleanwhite-rsy">The modified Clean White theme</a></li>
+<li><a href="https://github.com/youngkin/youngkin.github.io">The published GitHub Pages repo</a></li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://gohugo.io/getting-started/quick-start/">Hugo Quickstart page</a></li>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Hugo GitHub Pages quickstart page</a></li>
+<li><a href="https://github.blog/2016-02-01-working-with-submodules/">Git Submodules</a></li>
+<li><a href="https://help.github.com/articles/user-organization-and-project-pages/#user--organization-pages">GitHub Pages help documentation</a></li>
+<li><a href="https://pages.github.com/">GitHub Pages quickstart guide</a></li>
+<li><a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository">GitHub documentation</a></li>
+<li><a href="https://github.com/gohugoio/hugo/releases">Hugo downloads page</a></li>
+<li><a href="https://gohugo.io/getting-started/installing/">Hugo installation documentation</a></li>
+<li><a href="https://themes.gohugo.io/">Hugo themes page</a></li>
+<li><a href="https://themes.gohugo.io/gohugo-theme-ananke/">Ananke theme page</a></li>
+<li><a href="https://themes.gohugo.io/hugo-theme-cleanwhite/">Clean White theme page</a></li>
+<li><a href="https://gohugo.io/getting-started/">Hugo’s Getting Started documentation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/IETF_language_tag">IETF language tag spec</a></li>
+<li><a href="https://gohugo.io/getting-started/configuration-markup">Hugo Configure Markup document</a></li>
+<li><a href="https://moonbooth.com/hugo/seo/">SEO tutorial</a></li>
+<li><a href="https://gohugo.io/content-management/archetypes/">Hugo Archetypes</a></li>
+<li><a href="https://gohugo.io/getting-started/configuration">Hugo Configuration</a></li>
+<li><a href="https://www.markdownguide.org/tools/hugo/">Hugo Markdown Guide</a></li>
+</ul>
+<h2 id="appendix">Appendix</h2>
+<p>This appendix describes some additional changes I made that you might also want to consider.</p>
+<h3 id="add-support-for-comments">Add Support for Comments</h3>
+<p>Any good blog needs to support comments. My basic requirements for commenting were:</p>
+<ol>
+<li>Free - Blogs with comments are great, but I&rsquo;m not willing to pay for it.</li>
+<li>Hosted - I didn&rsquo;t want to have to stand-up my own comments server</li>
+</ol>
+<p>Hugo does come with out-of-the-box support for <a href="https://disqus.com/">Disqus</a>. Disqus does have a <a href="https://disqus.com/pricing/">free option</a>, but it&rsquo;s ad supported. I don&rsquo;t like ads. So I did a <a href="https://talk.hyvor.com/blog/disqus-alternatives/"><em>little</em> research on free alternatives</a>. Sharp eyed readers will notice this article is published by <a href="https://talk.hyvor.com/">Hyvor</a>, one of the free alternatives. I also looked at using <a href="https://retifrav.github.io/blog/2019/04/19/github-comments-hugo/">GitHub comments</a>. I chose not to use GitHub comments due to the requirement that commenters have a GitHub account. Using GitHub comments also felt a bit clunky for sevearl reasons:</p>
+<ol>
+<li>The comments section of each article was a link to an associated GitHub issue. This link wasn&rsquo;t always obvious</li>
+<li>Following the link takes the commentor to GitHub, away from the blog. This felt disjointed.</li>
+<li>The blog author has to create an associated GitHub issue for each blog page.</li>
+</ol>
+<p>So despite the potential for bias in the Hyvor article, it seemed to cover the bases so I went with Hyvor as my commenting platform. If you think you&rsquo;d like to use GitHub for comments, <a href="https://retifrav.github.io/blog/2019/04/19/github-comments-hugo/">GitHub comments for a Hugo-based blog</a> describes how to accomplish this.</p>
+<h4 id="hyvor">Hyvor</h4>
+<p>Using Hyvor as a commenting platform is straightforward:</p>
+<ol>
+<li>Get a <a href="https://talk.hyvor.com/docs/account">Hyvor account</a></li>
+<li>Configure your Hyvor account</li>
+<li><a href="https://talk.hyvor.com/docs/install">Add(Install) Hyvor to your blog</a></li>
+<li><a href="https://talk.hyvor.com/docs/appearance">Customizing the appearance</a> and other aspects of how comments will be used</li>
+</ol>
+<p>Completing the first step is simply a matter of registering your account. Just fill in the details on the <a href="https://auth.hyvor.com/signup/">Sign Up For Hyvor</a> page.</p>
+<p>The second step, configuring my Hyvor account, was a little less straightforward, at least for me. Once you&rsquo;re logged into the Hyvor site you&rsquo;ll be placed on your account page. On that page is a Website URL entry. This is where you put the top level URL for your blog (e.g., <a href="https://smith.github.io">https://smith.github.io</a>). However from here, things are a bit more murky. You&rsquo;ll need to go to your console to do more. To do that you click on the text &ldquo;Hyvor Talk&rdquo; at the bottom of the page:</p>
+<img style="border:1px solid black" src="/images/hyvoraccount.jpeg" align="center" />
+<figcaption align="left"><center><i style="color:green;">Hyvor account page</i></center></figcaption>
+<p>This will take you to another page containing a &ldquo;Go to Console&rdquo; button.</p>
+<img style="border:1px solid black" src="/images/hyvorconsolebutton.jpeg" align="center" />
+<figcaption align="left"><center><i style="color:green;">Navigate to Console</i></center></figcaption>
+<p>Click on the button and your console will look something like this:</p>
+<img style="border:1px solid black" src="/images/hyvorconsole.jpeg" align="center" />
+<figcaption align="left"><center><i style="color:green;">Hyvor Console</i></center></figcaption>
+<p>Hyvor assigns the <code>Website ID</code>. You fill in the rest. I added an additional <code>Website domain</code>, <code>localhost</code>, so I could test on my local machine.</p>
+<p>The third step involves adding Hyvor to your blog. To do this click on &ldquo;Install&rdquo; in the left-hand navigation section. Then click on the &ldquo;Manual Install&rdquo; option. After doing this you should see 2 steps described in the resulting page.</p>
+<img style="border:1px solid black" src="/images/hyvormanualinstall.jpeg" align="center" />
+<figcaption align="left"><center><i style="color:green;">Hyvor manual install</i></center></figcaption>
+<p>You&rsquo;ll need to &ldquo;cut &amp; paste&rdquo; the code from step one of this page into your theme&rsquo;s <code>layouts/partials/comments.html</code> file <em>(You should be able to ignore step 2)</em>. When done it should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- disqus end --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;disqus-comment&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>{{ if .Site.Params.disqus_proxy }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">iDisqus</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">relURL</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">disq</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">iDisqus</span>(<span style="color:#e6db74">&#39;disqus-comment&#39;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">forum</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.DisqusShortname}}&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">api</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.disqus_proxy }}&#39;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">site</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.disqus_site }}&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">timeout</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5000</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">init</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ else if .Site.DisqusShortname }}
+</span></span><span style="display:flex;"><span>{{ template &#34;_internal/disqus.html&#34; . }}
+</span></span><span style="display:flex;"><span>{{ else if .Site.Params.hyvor }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hyvor-talk-view&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HYVOR_TALK_WEBSITE</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">XXXXXXX</span>; <span style="color:#75715e">// DO NOT CHANGE THIS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HYVOR_TALK_CONFIG</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><p>Specifically note the <code>{{ else if .Site.Params.hyvor }}</code> block. Except for the value of <code>HYVOR_TALK_WEBSITE</code>, which should be your specific assigned value, this is the block you pasted into the <code>comments.html</code> file. It&rsquo;s pasted just prior to the <code>{{ end }}</code> line. <code>.Site.Params.hyvor</code> refers to a parameter in your <code>config.toml</code> file in the <code>[params]</code> section, e.g.:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#header_image = &#34;images/MeAtJackson.jpeg&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">header_image</span> = <span style="color:#e6db74">&#34;images/main_go_wideandtall_darklayer.jpeg&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Software Engineering&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">slogan</span> = <span style="color:#e6db74">&#34;$ grep -rni \&#34;The how&#39;s and why&#39;s\&#34; .&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SEOTitle</span> = <span style="color:#e6db74">&#34;Rich Youngkin Blog&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">keyword</span> = <span style="color:#e6db74">&#34;Rich, Youngkin, Raspberry, Pi, Docker, Kubernetes, Go, Golang, Microservice&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Comments</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">hyvor</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Sidebar settings</span>
+</span></span></code></pre></div><p>The pertinent change is the block starting with <code># Comments</code>. <code>hyvor = true</code> enables Hyvor commenting.</p>
+<p>The bottom of each blog post will now look something like this:</p>
+<img style="border:1px solid black" src="/images/hyvorcomments.jpeg" align="center" />
+<figcaption align="left"><center><i style="color:green;">Comments section</i></center></figcaption>
+<p>To get exactly this appearance do this from the Hyvor Console:</p>
+<ol>
+<li>To match the blog&rsquo;s theme colors, click on the &ldquo;Appearance&rdquo; entry in the left-hand navigation section of your Hyvor Console. Then click on &ldquo;Accent Color&rdquo; and in the resulting color picker in the bottom left enter the hex color code <code>#555555</code>. Then click &ldquo;Save&rdquo;.</li>
+<li>To remove the emoji reactions, click on the &ldquo;Community&rdquo; entry in the left-hand navigation section of your Hyvor Console. The second item in settings, just under &ldquo;Comments Note&rdquo;, is &ldquo;Reactions&rdquo;. Turn this off and click &ldquo;Save&rdquo;.</li>
+</ol>
+<h3 id="optional-table-of-contents">Optional Table of Contents</h3>
+<p>I wanted to have the option to include a table of contents on selected articles. As mentioned above, I added a <code>toc</code> item in the <code>archetypes/post.md</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
+</span></span><span style="display:flex;"><span>#description: &lt;descriptive text here&gt;
+</span></span><span style="display:flex;"><span>date: {{ .Date }}
+</span></span><span style="display:flex;"><span>draft: true
+</span></span><span style="display:flex;"><span>toc: false
+</span></span><span style="display:flex;"><span>image: &#34;&#34;
+</span></span><span style="display:flex;"><span>tags: []
+</span></span><span style="display:flex;"><span>categories: []
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Descriptive text here...
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--more--&gt;</span>
+</span></span></code></pre></div><p>If <code>toc</code> is set to true then Hugo will generate a table of contents for the associated article. I changed the original <code>themes/hugo-theme-cleanwhite/layouts/_default/single.html</code> file <strong>FROM</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Post Content --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">article</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- Post Container --&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                col-lg-11 col-lg-offset-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                col-md-10 col-md-offset-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                post-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                {{ if not (eq (.Param &#34;showtoc&#34;) false) }}
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">header</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">h2</span>&gt;TOC&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">header</span>&gt;
+</span></span><span style="display:flex;"><span>                {{.TableOfContents}}
+</span></span><span style="display:flex;"><span>                {{ end }}
+</span></span><span style="display:flex;"><span>                {{ .Content }}
+</span></span></code></pre></div><p><strong>TO:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Post Content --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">article</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">&lt;!-- Post Container --&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                col-lg-11 col-lg-offset-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                col-md-10 col-md-offset-1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                post-container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                {{ if (.Params.toc) }}
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">header</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#f92672">h2</span>&gt;Contents&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#f92672">header</span>&gt;
+</span></span><span style="display:flex;"><span>                {{.TableOfContents}}
+</span></span><span style="display:flex;"><span>                {{ end }}
+</span></span><span style="display:flex;"><span>                {{ .Content }}
+</span></span></code></pre></div><p>Specifically the block starting with <code>{{ if not (eq (.Param &quot;showtoc&quot;) false) }} ...</code> was changed to the block starting with <code>{{ if (.Params.toc) }} ...</code>. So instead of looking for the <code>showtoc</code> parameter in <code>config.toml</code>, <code>.Params.toc</code> directs the HTML template to look in the &ldquo;front matter&rdquo; at the top of an article for a <code>toc</code> entry.</p>
+<h3 id="theme-customizations">Theme Customizations</h3>
+<hr>
+<p><em><strong>NOTE: The manner of theme customizations described in this section is not the right way to customize a theme!</strong></em></p>
+<p><em>Hugo has built in capability for customizing themes that doesn&rsquo;t require copying and modifiying the theme itself. See <a href="https://tangenttechnologies.ca/blog/hugo-themes/">Hugo Themes</a> for a good description of the recommended approach to theme customization. So while the files referenced below are the same ones to be modified, copies of these files containing the overrides should be placed in the appropriate directories as noted in that article.</em></p>
+<p><em><strong>What follows below should be read with the above caution in mind.</strong></em></p>
+<hr>
+<p>I used the <a href="https://themes.gohugo.io/hugo-theme-cleanwhite/">Clean White theme</a>, but I wanted a different look for:</p>
+<ul>
+<li>Title and Description (looking for &ldquo;green screen&rdquo; feel)</li>
+<li>Sidebar Tags and social networking &ldquo;badges&rdquo; - too dim, wanted to darken</li>
+<li>Post summaries - these appear under each post Title on the home page. They&rsquo;re a brief summary of the post. I wanted these to be slightly darker.</li>
+<li>Wanted to change some fonts</li>
+</ul>
+<p>Here&rsquo;s what I changed:</p>
+<ul>
+<li>I copied <a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite">Clean White theme GitHub repository</a> to <a href="https://github.com/youngkin/hugo-theme-cleanwhite-rsy">my own copy</a>
+<ul>
+<li>I modified <code>themes/hugo-theme-cleanwhite-rsy/static/css/hux-blog.min.css</code>
+<ul>
+<li><strong>Note:</strong> I &ldquo;pretty printed&rdquo; this file with the Atom <code>css-clean</code> package to make it easier to visualize in this article, but it needs to be unchanged in the blog source in order for the web site to render properly</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="change-the-blog-header">Change the Blog Header</h4>
+<p>I wanted to change the text fonts, font size, and color in the <strong>Navigation Bar</strong>, <strong>Blog Title</strong>, and the <strong>Blog Subtitle</strong>.</p>
+<img src="/images/BlogHeader.png" />
+<figcaption><center><i style="color:green;">My blog header</i></center></figcaption>
+<p>I changed the text color in the <strong>Blog Title</strong> to green by changing the <code>color: #00FA9A</code> element. Here&rsquo;s the context for the changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">intro-header</span> .<span style="color:#a6e22e">page-heading</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">intro-header</span> .<span style="color:#a6e22e">post-heading</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">intro-header</span> .<span style="color:#a6e22e">site-heading</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span> : <span style="color:#ae81ff">85</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">55</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>   : <span style="color:#ae81ff">#00FA9A</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I changed the text color in the <strong>Navigation Bar</strong> to green by changing the <code>color: #00FA9A</code> element. Here&rsquo;s the context for the changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>  .<span style="color:#a6e22e">navbar-custom</span> .<span style="color:#a6e22e">navbar-brand</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>     : <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>       : <span style="color:#ae81ff">#00FA9A</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">line-height</span> : <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">navbar-custom</span> .<span style="color:#a6e22e">nav</span> <span style="color:#f92672">li</span> <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span> : <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>   : <span style="color:#ae81ff">#00FA9A</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>I changed the text rendering (font and font-color) for the <strong>Blog Subtitle</strong> (&lsquo;slogan&rsquo; in <code>config.toml</code>) by changing <code>color: #FFD700</code>,<code>font-size: 25px</code>, and adding <code>font-family: Courier New, monospace;</code>. Here&rsquo;s the context for the changes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">intro-header</span> .<span style="color:#a6e22e">page-heading</span> .<span style="color:#a6e22e">subheading</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">intro-header</span> .<span style="color:#a6e22e">site-heading</span> .<span style="color:#a6e22e">subheading</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>     : <span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>      : <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>       : <span style="color:#ae81ff">#FFD700</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span> : <span style="color:#f92672">-</span>apple-system,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Helvetica Neue&#34;</span>,
+</span></span><span style="display:flex;"><span>                Arial,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;PingFang SC&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Hiragino Sans GB&#34;</span>,
+</span></span><span style="display:flex;"><span>                STHeiti,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Microsoft YaHei&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Microsoft JhengHei&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Source Han Sans SC&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Noto Sans CJK SC&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Source Han Sans CN&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Noto Sans SC&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Source Han Sans TC&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Noto Sans CJK TC&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;WenQuanYi Micro Hei&#34;</span>,
+</span></span><span style="display:flex;"><span>                SimSun,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span> : Courier New,
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">monospace</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>   : <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span> : <span style="color:#ae81ff">300</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span> : <span style="color:#ae81ff">1.7</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span> : <span style="color:#ae81ff">1.1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="change-the-post-summaries">Change the Post Summaries</h4>
+<img style="border:1px solid black" src="/images/blogsummary.jpeg" />
+<figcaption><center><i style="color:green;">Blog summary section</i></center></figcaption>
+<p>The summary text and post date were a light gray. To improve the contrast I changed the <code>.post-meta</code> and <code>.post-content-preview</code> colors to <code>#555555</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">post-meta</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>:Lora,<span style="color:#e6db74">&#39;Times New Roman&#39;</span>,<span style="color:#66d9ef">serif</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#555555</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-style</span>:<span style="color:#66d9ef">italic</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>:<span style="color:#ae81ff">0</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">post-content-preview</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">13</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-style</span>:<span style="color:#66d9ef">italic</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#555555</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h4 id="change-the-sidebar">Change the Sidebar</h4>
+<p>In the Sidebar I wanted to change the text and border color of the &ldquo;FEATURED TAGS&rdquo;, the text color of the short bio, and the background color of the social networking &lsquo;badges&rsquo;.</p>
+<img style="border:1px solid black" src="/images/BlogSideBar.png" align="center" />
+<figcaption align="left"><center><i style="color:green;">My Sidebar</i></center></figcaption>
+<p>The color of the &ldquo;About Me&rdquo; short bio and the social badges was too light for my tastes. I changed these colors to a darker gray by changing <code>.sidebar-container {...}</code> and <code>.sidebar-container a {...}</code> color elements to <code>#555555</code>. Here&rsquo;s the context for these changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">sidebar-container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>     : <span style="color:#ae81ff">#555555</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span> : <span style="color:#ae81ff">14</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">sidebar-container</span> <span style="color:#f92672">h5</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding-bottom</span> : <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>          : <span style="color:#66d9ef">gray</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">sidebar-container</span> <span style="color:#f92672">h5</span> <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>           : <span style="color:#66d9ef">gray</span><span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-decoration</span> : <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">sidebar-container</span> <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span> : <span style="color:#ae81ff">#555555</span><span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As above, the text and border color of the &ldquo;Featured Tags&rdquo; was too light for me. I changed this to a darker gray by changing the <code>.sidebar-container .tags a {...}</code> <code>border-color</code> to <code>#555555</code> and the <code>.tags a {... color: ... border:...}</code> color and border elements to <code>#FFD700</code> and <code>1px solid rgba(255,215,0,0.8)</code> respectively. Here&rsquo;s the context for these changes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">sidebar-container</span> .<span style="color:#a6e22e">tags</span> <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-color</span> : <span style="color:#ae81ff">#555555</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">tags</span> <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>         : <span style="color:#66d9ef">inline-block</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>          : <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>   : <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>         : <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>           : <span style="color:#ae81ff">#FFD700</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>          : <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgba(<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">215</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.8</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>   : <span style="color:#ae81ff">999</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-decoration</span> : <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>       : <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>     : <span style="color:#ae81ff">24</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="image-manipulation">Image manipulation</h3>
+<p>I wanted to modify some of the images used in the site, primarily the background images used in the page headers. I used <a href="https://www.gimp.org/">GIMP</a> to manipulate the blog images. I mostly changed the following:</p>
+<ul>
+<li>Resized the images to fit within the page</li>
+<li>Added a dark layer over the top of the images to increase contrast with the blog header elements (i.e., navigation bar, title, subtitle)
+<ul>
+<li>I mostly used <code>#4d4d4d</code> and <code>#373737</code> as the colors, a <code>mode</code> of <code>normal</code>, and an <code>Opacity</code> of 80%</li>
+</ul>
+</li>
+</ul>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                </ul>
+                
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Vishwas Vankalapatia" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:vishwasvr@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/vishwasvr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/vishwas-vankalapati/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://medium.com/@vishwasvr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/10349122/vishwasvr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Vishwas Vankalapatia 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>
